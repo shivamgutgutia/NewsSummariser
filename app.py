@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from articleScraper import scrapeArticles
+import os
 
 app = Flask(__name__)
 
@@ -16,4 +17,4 @@ def retrieveArticles():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0")
+    app.run(port=int(os.getenv("PORT",5000)),host="0.0.0.0")
