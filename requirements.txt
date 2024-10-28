@@ -17,3 +17,4 @@ soupsieve==2.6
 tqdm==4.66.6
 urllib3==2.2.3
 Werkzeug==3.0.6
+gunicorn
