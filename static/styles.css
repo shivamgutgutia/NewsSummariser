@@ -1,0 +1,64 @@
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f5f5f5;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+}
+
+.article-container {
+	display: flex;
+	align-items: center;
+	background-color: #ffffff;
+	border-radius: 8px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	width: 80%;
+	max-width: 1200px;
+	height: 80%;
+}
+
+.card {
+	flex: 1;
+	padding: 20px;
+	text-align: center;
+	min-height: 60%; /* Responsive height based on container */
+	max-height: 90%; /* Ensures it doesn't exceed the container */
+	width: 30%; /* Responsive width */
+	border: 1px solid #e0e0e0;
+	border-radius: 8px;
+	background-color: #f9f9f9;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column; /* Aligns content vertically */
+	justify-content: center; /* Centers content vertically */
+}
+
+.nav-button {
+	background-color: #007bff;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	padding: 10px 15px;
+	cursor: pointer;
+	font-size: 18px;
+}
+
+.nav-button:hover {
+	background-color: #0056b3;
+}
+
+h2 {
+	color: #333;
+	font-size: 1.8em; /* Larger font size for readability */
+	margin-bottom: 10px;
+}
+
+p {
+	color: #666;
+	font-size: 1.1em; /* Slightly larger font size */
+	line-height: 1.5;
+	overflow-y: auto;
+}

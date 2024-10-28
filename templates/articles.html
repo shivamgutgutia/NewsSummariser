@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="static/styles.css" />
+		<title>News Articles</title>
+	</head>
+	<body>
+		<div class="article-container">
+			<button
+				class="nav-button"
+				id="prevButton"
+				onclick="changeArticle(-1)"
+			>
+				&#10094;
+			</button>
+			<div class="card" id="articleCard">
+				<h2 id="articleTitle"></h2>
+				<p id="articleDescription"></p>
+				<a id="articleLink" target="_blank"></a>
+			</div>
+			<button
+				class="nav-button"
+				id="nextButton"
+				onclick="changeArticle(1)"
+			>
+				&#10095;
+			</button>
+		</div>
+
+		<script>
+			let articles = {{ articles|tojson }};
+			let currentIndex = 0;
+
+			function displayArticle(index) {
+			    document.getElementById('articleTitle').innerText = articles[index].title;
+			    document.getElementById('articleDescription').innerText = articles[index].summary;
+			             document.getElementById('articleLink').innerText = articles[index].link;
+			                      document.getElementById('articleLink').href = articles[index].link
+			}
+
+			function changeArticle(direction) {
+			    currentIndex += direction;
+			    if (currentIndex < 0) {
+			        currentIndex = articles.length - 1;
+			    } else if (currentIndex >= articles.length) {
+			        currentIndex = 0;
+			    }
+			    displayArticle(currentIndex);
+			}
+
+			displayArticle(currentIndex);
+		</script>
+	</body>
+</html>
