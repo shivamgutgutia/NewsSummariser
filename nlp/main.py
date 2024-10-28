@@ -1,6 +1,8 @@
 import re, nltk, math
 from collections import Counter
 
+nltk.download('punkt_tab')
+
 stopwords = {
     "",
     ",",
