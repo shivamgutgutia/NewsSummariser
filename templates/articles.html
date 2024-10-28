@@ -18,7 +18,7 @@
 			<div class="card" id="articleCard">
 				<h2 id="articleTitle"></h2>
 				<p id="articleDescription"></p>
-				<a id="articleLink" target="_blank"></a>
+				<a id="articleLink" target="_blank" href=""></a>
 			</div>
 			<button
 				class="nav-button"
@@ -30,7 +30,7 @@
 		</div>
 
 		<script>
-			let articles = {{ articles|tojson }};
+			let articles = {{ articlesList|tojson }};
 			let currentIndex = 0;
 
 			function displayArticle(index) {

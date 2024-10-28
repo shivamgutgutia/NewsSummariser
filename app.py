@@ -12,8 +12,8 @@ def home():
 @app.route("/retrieve-articles")
 def retrieveArticles():
     articles = scrapeArticles()
-    return render_template("articles.html", articles=articles)
+    return render_template("articles.html", articlesList=articles)
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0")
