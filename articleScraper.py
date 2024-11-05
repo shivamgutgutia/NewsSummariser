@@ -1,10 +1,11 @@
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
-from nlp.main import summarize
+from nlp.main import extractiveSummarize
+from nlp.abstractive import abstractiveSummarize
 
 
-def scrapeArticles():
+def scrapeArticles(abstractive=False):
     url = "https://www.hindustantimes.com/"
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
@@ -68,7 +69,9 @@ def scrapeArticles():
         )
         inputTitle = article_data["title"]
         inputText = article_data["description"]
-        summary = summarize(inputTitle, inputText)
+        summary = extractiveSummarize(inputTitle, inputText)
+        if abstractive:
+            summary = abstractiveSummarize(summary)
         article_data["summary"] = summary
         article_data["link"] = link
         articles.append(article_data)

@@ -7,6 +7,7 @@
 		<style>
 			body {
 				display: flex;
+				flex-direction: column; /* Align buttons vertically */
 				justify-content: center;
 				align-items: center;
 				height: 100vh;
@@ -22,6 +23,7 @@
 				border-radius: 5px;
 				cursor: pointer;
 				transition: background-color 0.3s;
+				margin: 10px 0; /* Add margin to space out buttons */
 			}
 			button:hover {
 				background-color: #0056b3;
@@ -29,8 +31,13 @@
 		</style>
 	</head>
 	<body>
-		<form action="/retrieve-articles" method="get">
-			<button type="submit">Retrieve News Articles</button>
+		<form action="/retrieve-articles-extractive" method="get">
+			<button type="submit">Summarize News Articles - Extractive</button>
+		</form>
+		<form action="/retrieve-articles-abstractive" method="get">
+			<button type="submit">
+				Retrieve News Articles - Abstractive (Might be slow)
+			</button>
 		</form>
 	</body>
 </html>

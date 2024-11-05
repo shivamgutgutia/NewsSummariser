@@ -588,7 +588,7 @@ def summarizeUtil(title="", text="", maxSents=5):
     return [summary[1] for summary in summaries]
 
 
-def summarize(title, text):
+def extractiveSummarize(title, text):
     textKeywords = list(keywords(text).keys())
     titleKeywords = list(keywords(title).keys())
     maxSentences=5
