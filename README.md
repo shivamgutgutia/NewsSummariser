@@ -8,6 +8,11 @@ This project summarizes news articles using machine learning models. Follow the 
 
 ## Setup
 
+> **⚠️ Important Note:**  
+> The first time you run this project, it may take a bit longer as base models are being downloaded and installed. **Please be patient.**
+
+### Common Steps (For Both Model Training and Flask)
+
 1. **Clone the repository**
     ```bash
     git clone https://github.com/shivamgutgutia/NewsSummariser.git
@@ -38,14 +43,21 @@ This project summarizes news articles using machine learning models. Follow the 
     pip install -r requirements.txt
     ```
 
+### Part 1: Model Training (Optional)
+
+> **🔄 Optional Step**  
+> A pre-trained model is already hosted on Hugging Face and can be used directly, so running this step is optional. However, if you'd like to train the model locally, follow these steps:
+
 5. **Train the Model**
     Run the `modeltraining.py` script to train your model.
     ```bash
     python modeltraining.py
     ```
 
-6. **Run the Flask Application**
-    Start the Flask app with the following command:
+### Part 2: Running the Flask Application
+
+6. **Start the Flask Application**
+    Once the dependencies are installed, you can run the Flask app with the following command:
     ```bash
     flask run
     ```

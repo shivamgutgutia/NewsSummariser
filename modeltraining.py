@@ -12,11 +12,19 @@ from torch.utils.data import Dataset, DataLoader
 
 
 from transformers import BartTokenizer, BartForConditionalGeneration
+import os
+import shutil
 
 # %%
 
 device = "cuda" if cuda.is_available() else "cpu"
 print(f"Using device: {device}", end="\n\n")
+
+folder_path = "./model"
+
+if os.path.exists(folder_path):
+    shutil.rmtree(folder_path)
+os.makedirs(folder_path)
 
 # %%
 
@@ -235,6 +243,6 @@ scores = rouge_score.compute(
 
 rouge_scores_df = pd.DataFrame([scores]).transpose()
 
-rouge_scores_df.head()
+print(rouge_scores_df.head())
 
 # %%

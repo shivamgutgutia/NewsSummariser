@@ -1,8 +1,16 @@
 from transformers import BartForConditionalGeneration, BartTokenizer
 import re
+import os
 
-model = BartForConditionalGeneration.from_pretrained("shivamgutgutia/text_summarizer")
-tokenizer = BartTokenizer.from_pretrained("shivamgutgutia/text_summarizer")
+model_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "model")
+
+if os.path.isdir(model_dir):
+    model = BartForConditionalGeneration.from_pretrained("./model")
+    tokenizer = BartTokenizer.from_pretrained("./model")
+else:
+    model = BartForConditionalGeneration.from_pretrained("shivamgutgutia/text_summarizer")
+    tokenizer = BartTokenizer.from_pretrained("shivamgutgutia/text_summarizer")
+
 
 def abstractiveSummarize(text):
     text = re.sub(r"\s+", " ", text) 

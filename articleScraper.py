@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
-from nlp.main import extractiveSummarize
+from nlp.extractive import extractiveSummarize
 from nlp.abstractive import abstractiveSummarize
 
 
